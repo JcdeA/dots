@@ -1,0 +1,50 @@
+#! /bin/sh
+xautolock -time 10 -locker i3lock-fancy -n&
+sxhkd &
+~/ibus.sh
+/usr/lib/polkit-kde-authentication-agent-1&
+
+#touchpad configs
+#====================================================
+synclient HorizScrollDelta=-100
+synclient VertScrollDelta=-100
+synclient TapButton1=1
+synclient TapButton2=3
+synclient SingleTapTimeout=1
+syndaemon -i 1 -d &
+
+killall feh
+killall dunst
+dunst &
+killall nm-applet
+nm-applet &
+killall picom	
+picom --experimental-backends&
+~/.config/polybar/launch.sh&
+
+bspc config focus_follows_pointer true
+
+#background:  #1d1f21
+#highlight:   #fb3d66
+
+bspc monitor -d I II III IV V VI VII
+
+bspc config border_width        	0
+bspc config window_gap          	13
+bspc config border_radius 		15
+
+bspc config split_ratio          	0.5
+bspc config borderless_monocle   	false
+bspc config gapless_monocle      	false
+bspc config single_monocle	 	true
+bspc config initial_polarity 		second_child
+
+
+
+bspc config pointer_modifier 		shift
+bspc config pointer_action1 		move
+bspc config pointer_action2 		resize_corner
+
+bspc rule -a Pavucontrol state=floating 
+
+feh --bg-fill /home/jcde/Downloads/nordwall2.png&
