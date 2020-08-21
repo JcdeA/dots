@@ -145,9 +145,10 @@ XF86AudioMute
         
 # Laptop screen brightness control
 XF86MonBrightnessUp 
-        ~/.config/polybar/scripts/brightness.sh + eDP 0.05
+         ~/.config/polybar/scripts/brightness.sh + eDP 0.05
 XF86MonBrightnessDown 
-        ~/.config/polybar/scripts/brightness.sh - eDP 0.05
+
+         ~/.config/polybar/scripts/brightness.sh - eDP 0.05
 
 
 
