@@ -11,8 +11,9 @@ synclient VertScrollDelta=-100
 synclient TapButton1=1
 synclient TapButton2=3
 synclient SingleTapTimeout=1
-syndaemon -i 1 -d &
-
+syndaemon -i 0.5 -d &
+killall imwheel
+imwheel -b "4 5"
 killall feh
 killall dunst
 dunst &
